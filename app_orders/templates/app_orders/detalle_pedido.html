@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Detalle de pedido{% endblock %}
+{% block content %}
+<h1>Detalle de pedido</h1>
+{% if pedido %}
+  <p>ID: {{ pedido.id }}</p>
+  <!-- Añade más campos según el modelo -->
+{% else %}
+  <p>Pedido no encontrado o aún no implementado.</p>
+{% endif %}
+{% endblock %}

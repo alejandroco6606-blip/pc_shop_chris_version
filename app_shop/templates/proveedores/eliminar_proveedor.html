@@ -15,7 +15,7 @@
             <form method="post">
                 {% csrf_token %}
                 <div class="text-end">
-                    <a href="{% url 'lista_proveedores' %}" class="btn btn-secondary">Cancelar</a>
+                    <a href="{% url 'app_shop:lista_proveedores' %}" class="btn btn-secondary">Cancelar</a>
                     <button type="submit" class="btn btn-danger">Sí, eliminar permanentemente</button>
                 </div>
             </form>

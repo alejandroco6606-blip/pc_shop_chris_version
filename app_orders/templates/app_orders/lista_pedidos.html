@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Pedidos{% endblock %}
+{% block content %}
+<h1>Pedidos</h1>
+<ul>
+  {% for p in pedidos %}
+    <li><a href="{% url 'app_orders:detalle_pedido' p.id %}">Pedido {{ p.id }}</a></li>
+  {% empty %}
+    <li>No hay pedidos</li>
+  {% endfor %}
+</ul>
+{% endblock %}
+{% extends 'base.html' %}
+{% block title %}Pedidos{% endblock %}
+{% block content %}
+<h1>Pedidos</h1>
+<ul>
+  {% for p in pedidos %}
+    <li><a href="{% url 'app_orders:detalle_pedido' p.id %}">Pedido {{ p.id }}</a></li>
+  {% empty %}
+    <li>No hay pedidos</li>
+  {% endfor %}
+</ul>
+{% endblock %}

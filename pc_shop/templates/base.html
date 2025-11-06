@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Mi Tienda{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app_shop/css/style.css' %}">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="{% url 'app_shop:lista_productos' %}">Productos</a> |
+        <a href="{% url 'app_orders:lista_pedidos' %}">Pedidos</a>
+      </nav>
+    </header>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Mi Tienda{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'app_shop/css/style.css' %}">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="{% url 'app_shop:lista_productos' %}">Productos</a> |
+      <a href="{% url 'app_orders:lista_pedidos' %}">Pedidos</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

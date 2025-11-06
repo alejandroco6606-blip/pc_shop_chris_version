@@ -9,8 +9,8 @@ def lista_productos(request):
     if request.method == 'POST':
         form = ProductoForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('lista_productos') # Redirige a la misma página
+                form.save()
+                return redirect('app_shop:lista_productos') # Redirige a la misma página
     else:
         # Si es GET, crea un formulario vacío
         form = ProductoForm()
@@ -33,8 +33,8 @@ def crear_producto(request):
     if request.method == 'POST':
         form = ProductoForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('lista_productos')
+                form.save()
+                return redirect('app_shop:lista_productos')
     else:
         form = ProductoForm()
     # Apunta al HTML de creación
@@ -48,8 +48,8 @@ def editar_producto(request, pk):
     if request.method == 'POST':
         form = ProductoForm(request.POST, instance=producto)
         if form.is_valid():
-            form.save()
-            return redirect('lista_productos')
+                form.save()
+                return redirect('app_shop:lista_productos')
     else:
         form = ProductoForm(instance=producto)
     return render(request, 'productos/editar_producto.html', {'form': form})
@@ -59,7 +59,7 @@ def eliminar_producto(request, pk):
     producto = get_object_or_404(Producto, pk=pk)
     if request.method == 'POST':
         producto.delete()
-        return redirect('lista_productos')
+        return redirect('app_shop:lista_productos')
     return render(request, 'productos/eliminar_producto.html', {'producto': producto})
 
 def lista_marcas(request):
@@ -71,8 +71,8 @@ def crear_marca(request):
     if request.method == 'POST':
         form = MarcaForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('lista_marcas')
+                form.save()
+                return redirect('app_shop:lista_marcas')
     else:
         form = MarcaForm()
     return render(request, 'marcas/crear_marca.html', {'form': form})
@@ -83,8 +83,8 @@ def editar_marca(request, pk):
     if request.method == 'POST':
         form = MarcaForm(request.POST, instance=marca)
         if form.is_valid():
-            form.save()
-            return redirect('lista_marcas')
+                form.save()
+                return redirect('app_shop:lista_marcas')
     else:
         form = MarcaForm(instance=marca)
     return render(request, 'marcas/editar_marca.html', {'form': form})
@@ -94,7 +94,7 @@ def eliminar_marca(request, pk):
     marca = get_object_or_404(Marca, pk=pk)
     if request.method == 'POST':
         marca.delete()
-        return redirect('lista_marcas')
+        return redirect('app_shop:lista_marcas')
     return render(request, 'marcas/eliminar_marca.html', {'marca': marca})
 
 def lista_proveedores(request):
@@ -105,8 +105,8 @@ def crear_proveedor(request):
     if request.method == 'POST':
         form = ProveedorForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('lista_proveedores')
+                form.save()
+                return redirect('app_shop:lista_proveedores')
     else:
         form = ProveedorForm()
     return render(request, 'proveedores/crear_proveedor.html', {'form': form})
@@ -116,8 +116,8 @@ def editar_proveedor(request, pk):
     if request.method == 'POST':
         form = ProveedorForm(request.POST, instance=proveedor)
         if form.is_valid():
-            form.save()
-            return redirect('lista_proveedores')
+                form.save()
+                return redirect('app_shop:lista_proveedores')
     else:
         form = ProveedorForm(instance=proveedor)
     return render(request, 'proveedores/editar_proveedor.html', {'form': form})
@@ -126,7 +126,7 @@ def eliminar_proveedor(request, pk):
     proveedor = get_object_or_404(Proveedor, pk=pk)
     if request.method == 'POST':
         proveedor.delete()
-        return redirect('lista_proveedores')
+        return redirect('app_shop:lista_proveedores')
     return render(request, 'proveedores/eliminar_proveedor.html', {'proveedor': proveedor})
 
 # --- VISTAS PARA CATEGORÍA ---
@@ -139,8 +139,8 @@ def crear_categoria(request):
     if request.method == 'POST':
         form = CategoriaForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('lista_categorias')
+                form.save()
+                return redirect('app_shop:lista_categorias')
     else:
         form = CategoriaForm()
     return render(request, 'categorias/crear_categoria.html', {'form': form})
@@ -150,8 +150,8 @@ def editar_categoria(request, pk):
     if request.method == 'POST':
         form = CategoriaForm(request.POST, instance=categoria)
         if form.is_valid():
-            form.save()
-            return redirect('lista_categorias')
+                form.save()
+                return redirect('app_shop:lista_categorias')
     else:
         form = CategoriaForm(instance=categoria)
     return render(request, 'categorias/editar_categoria.html', {'form': form})
@@ -160,5 +160,5 @@ def eliminar_categoria(request, pk):
     categoria = get_object_or_404(Categoria, pk=pk)
     if request.method == 'POST':
         categoria.delete()
-        return redirect('lista_categorias')
+        return redirect('app_shop:lista_categorias')
     return render(request, 'categorias/eliminar_categoria.html', {'categoria': categoria})

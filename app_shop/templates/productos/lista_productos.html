@@ -7,7 +7,7 @@
             <h1 class="h3 mb-0">Agregar Nuevo Producto</h1>
         </div>
         <div class="card-body">
-            <form method="post" action="{% url 'lista_productos' %}">
+            <form method="post" action="{% url 'app_shop:lista_productos' %}">
                 {% include 'productos/crear_producto.html' %}
             </form>
         </div>
@@ -40,8 +40,8 @@
                             
                             <td class="text-end">
                                 <div class="btn-group" role="group">
-                                    <a href="{% url 'editar_producto' producto.pk %}" class="btn btn-secondary btn-sm">Editar</a>
-                                    <a href="{% url 'eliminar_producto' producto.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
+                                    <a href="{% url 'app_shop:editar_producto' producto.pk %}" class="btn btn-secondary btn-sm">Editar</a>
+                                    <a href="{% url 'app_shop:eliminar_producto' producto.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
                                 </div>
                             </td>
                         </tr>

@@ -1,5 +1,8 @@
 # urls.py
 from django.urls import path
+
+app_name = 'app_shop'
+
 from . import views
 
 urlpatterns = [
